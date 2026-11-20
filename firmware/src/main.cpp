@@ -22,7 +22,10 @@
 
 // ถ้าวาง library จาก Edge Impulse ไว้ใน lib/ แล้ว จะใช้โมเดล AI
 // ถ้าชื่อโปรเจกต์ใน Edge Impulse ไม่ใช่ "Health Chair" ให้แก้ชื่อไฟล์ .h สองบรรทัดนี้
-#if __has_include(<Health_Chair_inferencing.h>)
+#if __has_include(<health_chair_inferencing.h>)
+#include <health_chair_inferencing.h>
+#define HAVE_EI 1
+#elif __has_include(<Health_Chair_inferencing.h>)
 #include <Health_Chair_inferencing.h>
 #define HAVE_EI 1
 #else
